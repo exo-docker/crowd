@@ -8,9 +8,9 @@ install(){
   tar zxf /tmp/${SOFTWARE_NAME}.tar.gz --strip=1 -C /opt/${SOFTWARE_NAME}
   rm /tmp/${SOFTWARE_NAME}.tar.gz
 
-  useradd --create-home --home-dir /opt/${SOFTWARE_NAME}-home --shell /bin/bash ${SOFTWARE_NAME}
+  adduser -D -h /opt/${SOFTWARE_NAME}-home -s /bin/bash ${SOFTWARE_NAME}
 
-  chown -R ${SOFTWARE_NAME}.${SOFTWARE_NAME} /opt/${SOFTWARE_NAME}
+  chown -R ${SOFTWARE_NAME}:${SOFTWARE_NAME} /opt/${SOFTWARE_NAME}
 
   mkdir -p /opt/${SOFTWARE_NAME}-home
 }
